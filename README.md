@@ -1,23 +1,32 @@
 # Signature Generator
 
-A signature generator for clubs and organizations.
+An email signature generator for clubs and organizations.
 Feel free to fork it to create your own signature template!
 
-## How to use?
+## User features
 
-### For final users
-
-- Create your own signature with your organization's logo
+- Create your own email signature with your organization's logo and design
 - Use Markdown to format your signature
 - Export your signature into multiple formats (HTML, source code, plain text)
 
-### For developers
+\>\>\> [Test it now!](https://3cn-ecn.github.io/signature-generator) <<<
 
-- Fork this repository to adapt it to your organization's design
-- Change the logo, colors and styles
-- Deploy your signature generator on GitHub Pages
+## How to adapt it for your own organization
 
-## Dev commands
+- Fork this repository
+- Update the signature logo by replacing the `public/logo_signature.png` image
+- Change the email signature's design by modifying files in `src/emailSignatureTemplate`
+- Optional: change the builder design by modifying files in `src/builderLayout`
+
+## Dev stuff
+
+### Useful commands
 
 - `npm run dev`: Start the development server
-- `npm run build`: Build the project for production
+- `npm run lint`: Find potential errors and fixes for the code
+
+### Libraries used
+
+- This generator is built with _react_ and _vite_, with _mui_ for the builder design.
+
+- For the email signature's template, we use **react-email** components, which allow maximum compatibility with all email clients (gmail, outlook, etc...).
