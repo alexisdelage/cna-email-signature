@@ -103,6 +103,8 @@ const fontStyles: CSSProperties = {
   margin: 0,
   marginBottom: 2,
   color: '#102648',
+  // We can't include fonts family in emails: the font will be applied only
+  // if available on the receiver's computer
   fontFamily: "Titillium, 'Titillium Web', Arial, sans-serif",
   fontSize: 'small',
   lineHeight: 'normal',
