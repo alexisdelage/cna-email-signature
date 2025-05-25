@@ -1,11 +1,8 @@
-import { render } from '@react-email/render';
-
-import { SignatureTemplate } from '../../emailSignatureTemplate/SignatureTemplate';
+import { renderHtmlCode } from './renderHtmlCode';
 
 export async function copyAsHtml(markdownContent: string) {
-  const htmlCode = await render(
-    <SignatureTemplate markdownContent={markdownContent} />,
-  );
+  const htmlCode = await renderHtmlCode(markdownContent);
+
   const element = document.createElement('div');
   element.innerHTML = htmlCode.trim();
 
