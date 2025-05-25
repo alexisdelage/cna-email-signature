@@ -17,6 +17,7 @@ Feel free to fork it to create your own signature template!
 - Update the signature logo by replacing the `public/logo_signature.png` image
 - Change the email signature's design by modifying files in `src/emailSignatureTemplate`
 - Optional: change the builder design by modifying files in `src/builderLayout`
+- Deploy your generator on GitHub Pages: Settings > Pages > Source: "GitHub Actions"
 
 ## Dev stuff
 
