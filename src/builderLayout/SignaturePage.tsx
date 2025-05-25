@@ -6,6 +6,7 @@ import {
   Button,
   Card,
   Container,
+  Link,
   TextField,
   Typography,
 } from '@mui/material';
@@ -21,13 +22,23 @@ export default function SignaturePage() {
 
   return (
     <Container sx={{ my: 4 }}>
-      <Typography variant="h1" mb={1}>
-        {'Générateur de signature'}
-      </Typography>
-      <Typography variant="body1" mb={2}>
+      <Typography variant="h1">{'Générateur de signature'}</Typography>
+      <Typography variant="body1" mt={1}>
         {'Générez votre signature mail Centrale Nantes !'}
       </Typography>
-      <FlexAuto gap={6} mt={4}>
+      <Typography variant="body2" mt={1}>
+        {'Retrouvez le code source de ce générateur sur '}
+        <Link
+          href="
+          https://github.com/3cn-ecn/signature-generator"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          {'GitHub'}
+        </Link>
+        .
+      </Typography>
+      <FlexAuto gap={6} mt={5}>
         <FlexCol width="100%" gap={2}>
           <TextField
             multiline
@@ -35,7 +46,9 @@ export default function SignaturePage() {
             onChange={(e) => setMarkdownCode(e.target.value)}
             label={'Modèle à compléter'}
             fullWidth
-            inputProps={{ sx: { fontFamily: 'monospace' } }}
+            slotProps={{
+              htmlInput: { sx: { fontFamily: 'monospace' } },
+            }}
           />
           <FlexRow gap={1} justifyContent="end">
             <Button
