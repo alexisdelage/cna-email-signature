@@ -1,8 +1,9 @@
-export const defaultContent = `# Martin DUPONT
-*Élève-Ingénieur⋅e en 3e année*
-Option Informatique des SI
+export const defaultContent = `# Cassandra LUMNI
+*Promotion 2020*
 ---
-Responsable Communication - BDE
+Commission Jeunes
+Chercheuse en biologie marine à IFREMER
 ---
 Tel : +33 X XX XX XX XX
-**alexis.delage@eleves.ec-nantes.fr**`;
+cassandra.lumni@centraliens-nantes.org
+**www.centraliens-nantes.org**`;

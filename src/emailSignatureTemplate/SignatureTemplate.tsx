@@ -7,12 +7,12 @@ import { Markdown } from '@react-email/markdown';
 import { Row } from '@react-email/row';
 
 import { buildAbsoluteUrl } from './urls';
-import logoSignature from '/logo_signature.png';
+import logoSignature from '/logo_cna_small.png';
 
 const emailRegex = /\b[\w.!#$%&'*+/=?^_`{|}~-]+@[\w.-]+\b/g;
 const phoneRegex = /(\+\s?)?\b\d[\d\s.-]{8,}\d\b/g;
-const websiteWithProtocolRegex = /https?:\/\/[^\s/$.?#].[^\s]*/g;
-const websiteRegex = /www\.[^\s/$.?#].[^\s]*/g;
+const websiteWithProtocolRegex = /https?:\/\/[^\s/$.?#*].[^\s]*/g;
+const websiteRegex = /www\.[^\s/$.?#].[^\s*]*/g;
 
 function prettify(content: string) {
   return content
@@ -34,7 +34,7 @@ export function SignatureTemplate({ markdownContent }: SignatureTemplateProps) {
   const content = prettify(markdownContent);
 
   const imageLink = buildAbsoluteUrl(logoSignature);
-  const link = buildAbsoluteUrl('https://www.ec-nantes.fr');
+  const link = buildAbsoluteUrl('https://www.centraliens-nantes.org');
 
   const logoWidth = 140;
 
@@ -46,7 +46,7 @@ export function SignatureTemplate({ markdownContent }: SignatureTemplateProps) {
             <Link href={link} rel="noopener noreferrer">
               <Img
                 src={imageLink} // do not use relative path in emails
-                alt="Centrale Nantes"
+                alt="Centrale Nantes Alumni"
                 width={logoWidth}
                 style={{
                   ...fontStyles,
@@ -59,8 +59,8 @@ export function SignatureTemplate({ markdownContent }: SignatureTemplateProps) {
           <Column valign="middle" width={7 + 19}>
             <div
               style={{
-                width: 7,
-                height: 38,
+                width: 4,
+                height: 41,
                 backgroundColor: '#FAB600',
                 marginRight: 19,
               }}
@@ -80,8 +80,8 @@ export function SignatureTemplate({ markdownContent }: SignatureTemplateProps) {
               fontWeight: 'bold',
             },
             hr: {
-              width: 30,
-              height: 5,
+              width: 25,
+              height: 4,
               backgroundColor: '#FAB600',
               border: 'none',
               marginLeft: 0,
