@@ -24,13 +24,13 @@ export default function SignaturePage() {
     <Container sx={{ my: 4 }}>
       <Typography variant="h1">{'Générateur de signature'}</Typography>
       <Typography variant="body1" mt={1}>
-        {'Générez votre signature mail Centrale Nantes !'}
+        {'Générez votre signature mail Centrale Nantes Alumni !'}
       </Typography>
       <Typography variant="body2" mt={1}>
         {'Retrouvez le code source de ce générateur sur '}
         <Link
           href="
-          https://github.com/3cn-ecn/signature-generator"
+          https://github.com/hydrielax/cna-email-signature"
           target="_blank"
           rel="noopener noreferrer"
         >
