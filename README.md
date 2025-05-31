@@ -13,11 +13,14 @@ Feel free to fork it to create your own signature template!
 
 ## How to adapt it for your own organization
 
-- Fork this repository
-- Update the signature logo by replacing the `public/logo_signature.png` image
-- Change the email signature's design by modifying files in `src/emailSignatureTemplate`
-- Optional: change the builder design by modifying files in `src/builderLayout`
-- Deploy your generator on GitHub Pages: Settings > Pages > Source: "GitHub Actions"
+1. Fork this repository
+1. Authorize workflows in the "Actions" tab
+1. Setup GitHub Pages: `Settings` > `Pages` > Select under `Source`: "GitHub Actions"
+1. Update the `baseUrl` property of the `vite.config.ts` with your repo name
+1. Update the signature:
+   - Update the signature logo by replacing the `public/logo_signature.png` image
+   - Change the email signature's design by modifying files in `src/emailSignatureTemplate`
+1. Optional: change the builder design by modifying files in `src/builderLayout`
 
 ## Dev stuff
 
