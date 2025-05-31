@@ -30,7 +30,7 @@ export default function SignaturePage() {
         {'Retrouvez le code source de ce générateur sur '}
         <Link
           href="
-          https://github.com/hydrielax/cna-email-signature"
+          https://github.com/alexisdelage/cna-email-signature"
           target="_blank"
           rel="noopener noreferrer"
         >
