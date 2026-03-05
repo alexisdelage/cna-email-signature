@@ -7,7 +7,8 @@ import { Markdown } from '@react-email/markdown';
 import { Row } from '@react-email/row';
 
 import { buildAbsoluteUrl } from './urls';
-import logoSignature from '/logo_cna_small.png';
+import logoAlumniRelativePath from '/logo_cna_small.png';
+import advertisementImageRelativePath from '/trophees-cna.webp';
 
 const emailRegex = /\b[\w.!#$%&'*+/=?^_`{|}~-]+@[\w.-]+\b/g;
 const phoneRegex = /(\+\s?)?\b\d[\d\s.-]{8,}\d\b/g;
@@ -33,69 +34,89 @@ interface SignatureTemplateProps {
 export function SignatureTemplate({ markdownContent }: SignatureTemplateProps) {
   const content = prettify(markdownContent);
 
-  const imageLink = buildAbsoluteUrl(logoSignature);
+  const logoAlumniUrl = buildAbsoluteUrl(logoAlumniRelativePath);
+  const advertisementImageUrl = buildAbsoluteUrl(
+    advertisementImageRelativePath,
+  );
   const link = buildAbsoluteUrl('https://www.centraliens-nantes.org');
 
   const logoWidth = 140;
 
   return (
-    <Row>
-      <Column valign="top" width={logoWidth + 20 + (7 + 19)}>
-        <Row>
-          <Column width={logoWidth + 20}>
-            <Link href={link} rel="noopener noreferrer">
-              <Img
-                src={imageLink} // do not use relative path in emails
-                alt="Centrale Nantes Alumni"
-                width={logoWidth}
+    <Column>
+      <Row>
+        <Column valign="top" width={logoWidth + 20 + (7 + 19)}>
+          <Row>
+            <Column width={logoWidth + 20}>
+              <Link href={link} rel="noopener noreferrer">
+                <Img
+                  src={logoAlumniUrl} // do not use relative path in emails
+                  alt="Centrale Nantes Alumni"
+                  width={logoWidth}
+                  style={{
+                    ...fontStyles,
+                    marginRight: 20,
+                    marginBottom: 0,
+                  }}
+                />
+              </Link>
+            </Column>
+            <Column valign="middle" width={7 + 19}>
+              <div
                 style={{
-                  ...fontStyles,
-                  marginRight: 20,
-                  marginBottom: 0,
+                  width: 4,
+                  height: 41,
+                  backgroundColor: '#FAB600',
+                  marginRight: 19,
                 }}
               />
-            </Link>
-          </Column>
-          <Column valign="middle" width={7 + 19}>
-            <div
-              style={{
-                width: 4,
-                height: 41,
+            </Column>
+          </Row>
+        </Column>
+        <Column valign="top">
+          <Markdown
+            markdownCustomStyles={{
+              p: {
+                ...fontStyles,
+              },
+              h1: {
+                ...fontStyles,
+                fontSize: 'medium',
+                fontWeight: 'bold',
+              },
+              hr: {
+                width: 25,
+                height: 4,
                 backgroundColor: '#FAB600',
-                marginRight: 19,
-              }}
-            />
-          </Column>
-        </Row>
-      </Column>
-      <Column valign="top">
-        <Markdown
-          markdownCustomStyles={{
-            p: {
-              ...fontStyles,
-            },
-            h1: {
-              ...fontStyles,
-              fontSize: 'medium',
-              fontWeight: 'bold',
-            },
-            hr: {
-              width: 25,
-              height: 4,
-              backgroundColor: '#FAB600',
-              border: 'none',
-              marginLeft: 0,
-            },
-            link: {
-              color: 'inherit',
-              textDecoration: 'none',
-            },
+                border: 'none',
+                marginLeft: 0,
+              },
+              link: {
+                color: 'inherit',
+                textDecoration: 'none',
+              },
+            }}
+          >
+            {content}
+          </Markdown>
+        </Column>
+      </Row>
+
+      <Link
+        href="https://www.centraliens-nantes.org/fr/article/lancement-des-trophees-alumni-nantraliens-appel-a-candidatures/19/2/2026/690/"
+        rel="noopener noreferrer"
+      >
+        <Img
+          src={advertisementImageUrl} // do not use relative path in emails
+          alt="A venir pour 2026 : les Trophées Alumni Nantraliens !"
+          width={450}
+          style={{
+            ...fontStyles,
+            marginTop: 20,
           }}
-        >
-          {content}
-        </Markdown>
-      </Column>
-    </Row>
+        />
+      </Link>
+    </Column>
   );
 }
 
