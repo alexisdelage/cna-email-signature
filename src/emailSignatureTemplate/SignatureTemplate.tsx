@@ -8,7 +8,7 @@ import { Row } from '@react-email/row';
 
 import { buildAbsoluteUrl } from './urls';
 import logoAlumniRelativePath from '/logo_cna_small.png';
-import advertisementImageRelativePath from '/trophees-cna.webp';
+import advertisementImageRelativePath from '/trophees-cna-2.webp';
 
 const emailRegex = /\b[\w.!#$%&'*+/=?^_`{|}~-]+@[\w.-]+\b/g;
 const phoneRegex = /(\+\s?)?\b\d[\d\s.-]{8,}\d\b/g;
@@ -103,7 +103,7 @@ export function SignatureTemplate({ markdownContent }: SignatureTemplateProps) {
       </Row>
 
       <Link
-        href="https://www.centraliens-nantes.org/fr/article/lancement-des-trophees-alumni-nantraliens-appel-a-candidatures/19/2/2026/690/"
+        href="https://www.centraliens-nantes.org/fr/event/trophy-soiree-de-remise-des-trophees-alumni-nantraliens-aux-laureates-trophy/2026/04/01/4150"
         rel="noopener noreferrer"
       >
         <Img
