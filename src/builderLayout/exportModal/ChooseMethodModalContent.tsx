@@ -25,29 +25,31 @@ export function ChooseMethodModalContent({
         {"Choisissez une méthode d'export"}
       </ResponsiveDialogHeader>
       <ResponsiveDialogContent sx={{ gap: 2, pb: 3 }}>
-        <Typography>{'Méthode recommandée :'}</Typography>
-        <LargeBigButton
-          onClick={() => {
-            copyHtmlSourceCode(markdownContent).then((code) => {
-              onNextStep(imageTutorial, code);
-            });
-          }}
-          color="primary"
-          sx={{ px: 1, py: 2 }}
-        >
-          <Typography>{'Copier le code source HTML'}</Typography>
-        </LargeBigButton>
-        <Typography>{'Autres méthodes :'}</Typography>
+        <Typography>Méthode recommandée&nbsp;:</Typography>
         <LargeBigButton
           onClick={() => {
             copyAsHtml(markdownContent).then(() => {
               onNextStep();
             });
           }}
+          color="primary"
+          sx={{ px: 1, py: 2 }}
+        >
+          <Typography>Copier au format HTML</Typography>
+          <Typography variant="caption">Adapté à Gmail</Typography>
+        </LargeBigButton>
+        <Typography>Autres méthodes&nbsp;:</Typography>
+        <LargeBigButton
+          onClick={() => {
+            copyHtmlSourceCode(markdownContent).then((code) => {
+              onNextStep(imageTutorial, code);
+            });
+          }}
           color="secondary"
           sx={{ px: 1, py: 2 }}
         >
-          <Typography>{'Copier au format HTML'}</Typography>
+          <Typography>Copier le code source HTML</Typography>
+          <Typography variant="caption">Adapté à la webmail ECN</Typography>
         </LargeBigButton>
         <LargeBigButton
           onClick={() => {
@@ -58,7 +60,10 @@ export function ChooseMethodModalContent({
           color="secondary"
           sx={{ px: 1, py: 2 }}
         >
-          <Typography>{'Copier au format texte simple'}</Typography>
+          <Typography>Copier au format texte simple</Typography>
+          <Typography variant="caption">
+            Cette méthode ne conserve pas les images et la mise en forme
+          </Typography>
         </LargeBigButton>
       </ResponsiveDialogContent>
     </>

@@ -1,5 +1,5 @@
 import { ArrowBack as ArrowBackIcon } from '@mui/icons-material';
-import { Alert, IconButton, Link, TextField, Typography } from '@mui/material';
+import { Alert, IconButton, TextField, Typography } from '@mui/material';
 
 import { ResponsiveDialogContent } from '../shared/components/ResponsiveDialogContent';
 import { ResponsiveDialogHeader } from '../shared/components/ResponsiveDialogHeader';
@@ -37,11 +37,7 @@ export function IncludeSignatureModalContent({
         </Alert>
         <Typography variant="body1">
           Vous pouvez maintenant coller la signature dans votre client mail
-          préféré, ou directement sur la{' '}
-          <Link href="https://webmail.ec-nantes.fr" target="_blank">
-            webmail ECN
-          </Link>
-          .
+          préféré.
         </Typography>
         {!!image && (
           <img
